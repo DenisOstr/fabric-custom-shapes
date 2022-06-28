@@ -1,0 +1,1 @@
+const canvas = new fabric.Canvas('canvas', { width: 1200, height: 600 })
