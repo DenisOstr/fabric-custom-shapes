@@ -14,7 +14,18 @@ function addStarShape() {
 }
 
 function addGearShape() {
+    const gearPath = drawGear(200, 200, 9, 180, 130, 50, 35, 20)
 
+    const canvasGearPath = new fabric.Path(
+        gearPath,
+        {
+            top: 100, left: 50,
+            width: 100, height: 100,
+            fill: '#000', strokeWidth: 3, stroke: '',
+        }
+    )
+
+    canvas.add(canvasGearPath)
 }
 
 function removeSelectedObject() {

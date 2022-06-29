@@ -16,7 +16,7 @@ src
 |    | star.js       # A file that implements a star shape using a mathematical formula
 |    | gear.js       # A file that implements a gear shape using a mathematical formula
 |
-|    index.html - Main application file
-|    index.js - Main application file that creating a canvas
-|    style.css - Styles
+|    index.html     # Main application file
+|    index.js       # Main application file that creating a canvas
+|    style.css      # Styles
 ```

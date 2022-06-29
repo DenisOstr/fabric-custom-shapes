@@ -1,8 +1,8 @@
 /**
-     * Method that draw a star with N spikes
-     * @param {Integer} cX          Circular x coordination
-     * @param {Integer} cY          Circular y coordination
-     * @param {Integer} spikes      Count of star point
+     * Method that draw a star shape with N spikes
+     * @param {Integer} cX          Center x coordination
+     * @param {Integer} cY          Center y coordination
+     * @param {Integer} spikes      Count of star segments
      * @param {Integer} oR          Outer radius
      * @param {Integer} iR          Inner radius
      */
