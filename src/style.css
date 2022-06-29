@@ -14,7 +14,7 @@ body {
 .controls-container {
     display: grid;
     gap: 10px;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: repeat(6, 1fr);
 
     background-color: #fff;
     padding: 10px;
@@ -49,6 +49,12 @@ body {
     position: absolute;
     margin-top: 15px;
     z-index: 1000;
+}
+.settings-dropdown {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 input[type="color"] {

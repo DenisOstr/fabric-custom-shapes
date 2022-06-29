@@ -10,22 +10,20 @@
 <body>
     <div class="controls-container">
         <!-- Add star / gear -->
-        <div>
-            <button onclick="addStarShape()" class="control-btn" title="Add a star shape">
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-star" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                    <path d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z" />
-                </svg>
-            </button>
-    
-            <button onclick="addGearShape()" class="control-btn" title="Add a gear shape">
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-settings" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                    <path d="M10.325 4.317c.426 -1.756 2.924 -1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543 -.94 3.31 .826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756 .426 1.756 2.924 0 3.35a1.724 1.724 0 0 0 -1.066 2.573c.94 1.543 -.826 3.31 -2.37 2.37a1.724 1.724 0 0 0 -2.572 1.065c-.426 1.756 -2.924 1.756 -3.35 0a1.724 1.724 0 0 0 -2.573 -1.066c-1.543 .94 -3.31 -.826 -2.37 -2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756 -.426 -1.756 -2.924 0 -3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94 -1.543 .826 -3.31 2.37 -2.37c1 .608 2.296 .07 2.572 -1.065z" />
-                    <circle cx="12" cy="12" r="3" />
-                </svg>
-            </button>
-        </div>
+        <button onclick="addStarShape()" class="control-btn" title="Add a star shape">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-star" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z" />
+            </svg>
+        </button>
+        
+        <button onclick="addGearShape()" class="control-btn" title="Add a gear shape">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-settings" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M10.325 4.317c.426 -1.756 2.924 -1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543 -.94 3.31 .826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756 .426 1.756 2.924 0 3.35a1.724 1.724 0 0 0 -1.066 2.573c.94 1.543 -.826 3.31 -2.37 2.37a1.724 1.724 0 0 0 -2.572 1.065c-.426 1.756 -2.924 1.756 -3.35 0a1.724 1.724 0 0 0 -2.573 -1.066c-1.543 .94 -3.31 -.826 -2.37 -2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756 -.426 -1.756 -2.924 0 -3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94 -1.543 .826 -3.31 2.37 -2.37c1 .608 2.296 .07 2.572 -1.065z" />
+                <circle cx="12" cy="12" r="3" />
+            </svg>
+        </button>
 
         <!-- Enable / Disable fill, stroke -->
         <div class="dropdown-container">
@@ -61,29 +59,52 @@
         </div>
 
         <!-- Set config settings -->
-        <div>
-            <button onclick="addFill()" class="control-btn" title="Adjust shape settings">
+        <div class="dropdown-container">
+            <button onclick="showSettings()" class="control-btn" title="Adjust shape settings">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-tool" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                     <path d="M7 10h3v-3l-3.5 -3.5a6 6 0 0 1 8 8l6 6a2 2 0 0 1 -3 3l-6 -6a6 6 0 0 1 -8 -8l3.5 3.5" />
                 </svg>
             </button>
+
+            <div class="dropdown-item settings-dropdown" id="settings" style="display: none;">
                 <!-- Set spikes count -->
+                <div style="margin-bottom: 10px;">
+                    <label for="starSpikesRange">Set star spikes</label>
+                    <input type="range" min="5" max="20" value="5" class="slider" id="starSpikesRange" style="width: 100%">
+                </div>
+
                 <!-- Set outer / inner radius -->
-                <!-- Set width / height -->
-                <!-- Set object place point (left, top) -->
-    
-            <button onclick="removeSelectedObject()" class="control-btn" title="Remove selected object from board">
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-trash" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                    <line x1="4" y1="7" x2="20" y2="7" />
-                    <line x1="10" y1="11" x2="10" y2="17" />
-                    <line x1="14" y1="11" x2="14" y2="17" />
-                    <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
-                    <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
-                </svg>
-            </button>
+                <div style="display: flex; margin-bottom: 10px;">
+                    <div style="margin-right: 10px">
+                        <label for="starOuterRadius">Set outer radius</label>
+                        <input type="number" name="starOuterRadius" id="starOuterRadius">
+                    </div>
+
+                    <div>
+                        <label for="starInnerRadius">Set inner radius</label>
+                        <input type="number" name="starInnerRadius" id="starInnerRadius">
+                    </div>
+                </div>
+
+                <!-- Set stroke round -->
+                <div style="display: flex; flex-direction: column;">
+                    <label for="strokeRound">Set stroke round</label>
+                    <input type="checkbox" name="strokeRound" id="strokeRound">
+                </div>
+            </div>
         </div>
+
+        <button onclick="removeSelectedObject()" class="control-btn" title="Remove selected object from board">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-trash" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <line x1="4" y1="7" x2="20" y2="7" />
+                <line x1="10" y1="11" x2="10" y2="17" />
+                <line x1="14" y1="11" x2="14" y2="17" />
+                <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
+                <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
+            </svg>
+        </button>
     </div>
 
     <canvas id="canvas"></canvas>
@@ -97,7 +118,6 @@
     <!-- Controls -->
     <script src="./controls/shapeControls.js"></script>
     <script src="./controls/fillAndStroke.js"></script>
-    <script src="./controls/setColor.js"></script>
     <script src="./controls/setShapesData.js"></script>
 
     <!-- Shapes -->

@@ -6,7 +6,7 @@ function addStarShape() {
         {
             top: 100, left: 50,
             width: 100, height: 100,
-            fill: '#000', strokeWidth: 3, stroke: ''
+            fill: '#000', strokeWidth: 3, stroke: '',
         }
     )
 
