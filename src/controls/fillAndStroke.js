@@ -1,20 +1,22 @@
-function addFillLayer() {
-    const fillContainer = document.getElementById('fillColorContainer')
+const fillContainer = document.getElementById('fillColorContainer')
+const strokeContainer = document.getElementById('strokeColorContainer')
 
-    if (fillContainer.style.display == 'none') {
-        fillContainer.style.display = 'block'
+const fillStyleProperty = fillContainer.style
+const strokeStyleProperty = strokeContainer.style
+
+function addFillLayer() {
+    if (fillStyleProperty.display == invisibleState) {
+        fillStyleProperty.display = visibleState
     } else {
-        fillContainer.style.display = 'none'
+        fillStyleProperty.display = invisibleState
     }
 }
 
 function addStrokeLayer() {
-    const strokeContainer = document.getElementById('strokeColorContainer')
-
-    if (strokeContainer.style.display == 'none') {
-        strokeContainer.style.display = 'block'
+    if (strokeStyleProperty.display == invisibleState) {
+        strokeStyleProperty.display = visibleState
     } else {
-        strokeContainer.style.display = 'none'
+        strokeStyleProperty.display = invisibleState
     }
 }
 

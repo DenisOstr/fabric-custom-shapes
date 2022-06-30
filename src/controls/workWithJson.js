@@ -1,18 +1,16 @@
 const jsonEditorModal = document.getElementById('jsonEditorModal')
 const jsonEditorArea = document.getElementById('jsonEditorArea')
-const mainContainer = document.getElementById('main')
 
-const styleProperty = jsonEditorModal.style
-const visibleState = 'block', invisibleState = 'none'
+const editorStyleProperty = jsonEditorModal.style
 
 // Open and close modal
 function openJsonEditor() {
-    styleProperty.display = visibleState
+    editorStyleProperty.display = visibleState
     mainContainer.style.overflow = 'hidden'
 }
 
 function closeJsonEditor() {
-    styleProperty.display = invisibleState
+    editorStyleProperty.display = invisibleState
     mainContainer.style.overflow = 'auto'
 }
 

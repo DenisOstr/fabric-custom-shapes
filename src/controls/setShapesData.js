@@ -1,10 +1,12 @@
-function showSettings() {
-    const settingsContainer = document.getElementById('settings')
+const settingsContainer = document.getElementById('settings')
 
-    if (settingsContainer.style.display == 'none') {
-        settingsContainer.style.display = 'block'
+const settingsStyleProperty = settingsContainer.style
+
+function showSettings() {
+    if (settingsStyleProperty.display == invisibleState) {
+        settingsStyleProperty.display = visibleState
     } else {
-        settingsContainer.style.display = 'none'
+        settingsStyleProperty.display = invisibleState
     }
 }
 
