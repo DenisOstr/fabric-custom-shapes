@@ -7,7 +7,7 @@
     <title>FabricJS Custom Shapes</title>
     <link rel="stylesheet" href="./style.css">
 </head>
-<body>
+<body id="main">
     <div class="controls-container">
         <!-- Add star / gear -->
         <button onclick="addStarShape()" class="control-btn" title="Add a star shape">
@@ -105,6 +105,59 @@
                 <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
             </svg>
         </button>
+
+        <div>
+            <button onclick="openJsonEditor()" class="control-btn" title="JSON editor">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-file-code" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <path d="M14 3v4a1 1 0 0 0 1 1h4" />
+                    <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
+                    <path d="M10 13l-1 2l1 2" />
+                    <path d="M14 13l1 2l-1 2" />
+                </svg>
+            </button>
+    
+            <div class="modal-container" id="jsonEditorModal" style="display: none;">
+                <div class="modal-window space-y-4">
+                    <div class="modal-header">
+                        <h4 class="modal-heading-text">JSON Editor</h4>
+
+                        <button onclick="closeJsonEditor()" class="close-modal-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                <line x1="18" y1="6" x2="6" y2="18" />
+                                <line x1="6" y1="6" x2="18" y2="18" />
+                            </svg>
+                        </button>
+                    </div>
+
+                    <div class="modal-body">
+                        <textarea name="jsonEditorArea" id="jsonEditorArea" cols="30" rows="30" class="json-editor-area"></textarea>
+                    </div>
+
+                    <div class="modal-footer">
+                        <div class="space-x-4">
+                            <button onclick="jsonPrettify()" class="modal-footer-control" title="Prettify minified JSON">JSON prettify</button>
+                            <button onclick="clearEditor()" class="modal-footer-control" style="padding: 10px 15px;" title="Clear editor">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-trash" width="12" height="12" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                    <line x1="4" y1="7" x2="20" y2="7" />
+                                    <line x1="10" y1="11" x2="10" y2="17" />
+                                    <line x1="14" y1="11" x2="14" y2="17" />
+                                    <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
+                                    <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
+                                </svg>
+                            </button>
+                        </div>
+
+                        <div class="space-x-4">
+                            <button onclick="canvasToJson()" class="modal-footer-control" title="Convert canvas to JSON">Canvas to JSON</button>
+                            <button onclick="jsonToCanvas()" class="modal-footer-control" title="Convert JSON to canvas">JSON to canvas</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <canvas id="canvas"></canvas>
@@ -119,6 +172,7 @@
     <script src="./controls/shapeControls.js"></script>
     <script src="./controls/fillAndStroke.js"></script>
     <script src="./controls/setShapesData.js"></script>
+    <script src="./controls/workWithJson.js"></script>
 
     <!-- Shapes -->
     <script src="./shapes/star.js"></script>
