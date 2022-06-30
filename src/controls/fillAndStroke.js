@@ -22,11 +22,11 @@ const fillColor = document.getElementById('shapeFillColor')
 const strokeColor = document.getElementById('shapeStrokeColor')
 
 fillColor.onchange = () => {
-    canvas.getActiveObject().set('fill', fillColor.value)
+    canvas.getActiveObject().set({ fill: fillColor.value, dirty: true })
     canvas.renderAll()
 }
 
 strokeColor.onchange = () => {
-    canvas.getActiveObject().set('stroke', strokeColor.value)
+    canvas.getActiveObject().set({ stroke: strokeColor.value, dirty: true })
     canvas.renderAll()
 }

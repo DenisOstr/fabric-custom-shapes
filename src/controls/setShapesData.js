@@ -16,7 +16,7 @@ function updateShapePath(updateShapePath) {
     const updatedPath = new fabric.Path(updateShapePath)
     const activeObject = canvas.getActiveObject()
 
-    activeObject.set({ path: updatedPath.path }).setCoords()
+    activeObject.set({ path: updatedPath.path, dirty: true }).setCoords()
 
     canvas.requestRenderAll()
 }
@@ -56,9 +56,9 @@ strokeRound.onchange = () => {
     const activeObject = canvas.getActiveObject()
 
     if (strokeRound.checked) {
-        activeObject.set({ strokeLineJoin: 'round' }).setCoords()
+        activeObject.set({ strokeLineJoin: 'round', dirty: true }).setCoords()
     } else {
-        activeObject.set({ strokeLineJoin: '' }).setCoords()
+        activeObject.set({ strokeLineJoin: '', dirty: true }).setCoords()
     }
 
     canvas.requestRenderAll()
